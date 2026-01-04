@@ -1,16 +1,20 @@
 import React from "react";
 
-const Header: React.FC = () => {
+type HeaderProps  = {
+  title: string;
+};
+
+const Header: React.FC<HeaderProps> = ({ title }) => {
     return (
-        <div className="header flex flex-col gap-3 px-4 py-3 border-b sm:flex-row sm:items-center">
-          <div className="menuIcon relative w-6 h-6">
-            <div className="dashTop"></div>
-            <div className="dashBottom"></div>
-            <div className="circle"></div>
+        <div className="header flex px-4 py-3 border-b items-center">
+          <div className="menuIcon relative w-8 h-6 shrink-0">
+            <div className="dashTop absolute top-0 left-0 w-8 h-0.5 bg-gray-400"></div>
+            <div className="dashMiddle absolute top-1/2 left-0 w-8 h-0.5 bg-gray-400 -translate-y-1/2"></div>
+            <div className="dashBottom absolute bottom-0 left-0 w-8 h-0.5 bg-gray-400"></div>
           </div>
-          <h1 className="text-lg font-semibold sm:flex-1">Registro de Tareas</h1>
-          <div className="flex items-center gap-2 w-full sm:w-auto">
-            <input type="text" className="searchInput text-sm px-2 py-1 border rounded-md w-full sm:w-48 focus:outline-none focus:ring-1 focus:ring-blue-400"
+          <h2 className="text-lg font-semibold flex-1 text-center">{title}</h2>
+          <div className="shrink-0">
+            <input type="text" className="searchInput hidden"
             placeholder="Buscar ..." />
             <i className="fa fa-search text-gray-500"></i>
           </div>

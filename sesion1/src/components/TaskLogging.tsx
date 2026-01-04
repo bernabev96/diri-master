@@ -47,8 +47,12 @@ const TaskLogging: React.FC = () => {
             <p>Preparé la presentación para la reunión de mañana</p>
           </div>
         </div>*/}
-        <Header />
+        <Header title="Registro de tareas" />
+        <Header title="Perfil"/>
+        <Header title="Preferencias"/>
+        <Header title="Chat"/>
         <Content /> 
+
       </div>
     </div>
   );
